@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 // const liveDB = 'mongodb+srv://ermadhulikasharma:1234@cluster0.irti3lh.mongodb.net/APIEcommerce?retryWrites=true&w=majority&appName=Cluster0'
 const connectDb = ()=>{
     //return mongoose.connect(process.env.LOCAL_URL)
-    return mongoose.connect(process.env.DB_URL)
+    return mongoose.connect(process.env.DB_URL, {useNewUrlParser: true})
     .then(()=>{
         console.log("connected sucessfully");
     }).catch((err)=>{
